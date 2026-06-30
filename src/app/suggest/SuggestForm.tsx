@@ -76,10 +76,10 @@ export default function SuggestForm({ items }: { items: Partial<WardrobeItem>[] 
           </select>
         </div>
         <button type="submit" className="btn btn-primary btn-lg" disabled={loading || items.length === 0}>
-          {loading ? "Thinking…" : "Suggest an outfit"}
+          {loading ? "Thinking…" : "Suggest an outfit →"}
         </button>
         {items.length === 0 && (
-          <p style={{ fontSize: "0.875rem", textAlign: "center", color: "var(--fg-muted)" }}>
+          <p style={{ fontSize: "0.8125rem", textAlign: "center", color: "var(--fg-muted)" }}>
             Add a few items to your wardrobe first.
           </p>
         )}
@@ -89,8 +89,20 @@ export default function SuggestForm({ items }: { items: Partial<WardrobeItem>[] 
 
       {result && (
         <section className="card" style={{ marginTop: "var(--s-5)" }}>
-          <span className="pill" style={{ marginBottom: "var(--s-3)" }}>My pick</span>
-          <p style={{ fontSize: "1.0625rem", lineHeight: 1.7, marginTop: "var(--s-3)", color: "var(--fg)" }}>
+          <span className="label" style={{ display: "block", marginBottom: "var(--s-4)" }}>
+            My pick
+          </span>
+          <p
+            style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontStyle: "italic",
+              fontSize: "1.375rem",
+              lineHeight: 1.5,
+              marginTop: "var(--s-3)",
+              marginBottom: "var(--s-5)",
+              color: "var(--fg)",
+            }}
+          >
             {result.reasoning}
           </p>
           {chosen.length > 0 && (
@@ -100,7 +112,7 @@ export default function SuggestForm({ items }: { items: Partial<WardrobeItem>[] 
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
-                  gap: "var(--s-3)",
+                  gap: "var(--s-4)",
                 }}
               >
                 {chosen.map((it) => (
@@ -108,8 +120,9 @@ export default function SuggestForm({ items }: { items: Partial<WardrobeItem>[] 
                     key={it.id}
                     style={{
                       background: "var(--bg-subtle)",
-                      borderRadius: "var(--r-md)",
+                      borderRadius: "2px",
                       overflow: "hidden",
+                      border: "1px solid var(--border)",
                     }}
                   >
                     <div style={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
@@ -120,7 +133,7 @@ export default function SuggestForm({ items }: { items: Partial<WardrobeItem>[] 
                       />
                     </div>
                     {it.description && (
-                      <p style={{ padding: "var(--s-2) var(--s-3)", fontSize: "0.8125rem", color: "var(--fg-muted)" }}>
+                      <p style={{ padding: "var(--s-3)", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--fg-muted)" }}>
                         {it.description}
                       </p>
                     )}

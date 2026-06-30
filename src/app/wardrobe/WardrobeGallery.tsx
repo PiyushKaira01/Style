@@ -22,15 +22,19 @@ export default function WardrobeGallery({ initialItems }: { initialItems: Wardro
         style={{
           padding: "var(--s-8) var(--s-5)",
           textAlign: "center",
-          background: "var(--bg-elevated)",
+          background: "transparent",
           border: "1px dashed var(--border-strong)",
-          borderRadius: "var(--r-lg)",
+          borderRadius: "2px",
         }}
       >
-        <h3 style={{ marginBottom: "var(--s-3)" }}>Your wardrobe is empty</h3>
+        <span className="label" style={{ display: "block", marginBottom: "var(--s-3)" }}>
+          Empty
+        </span>
+        <h3 style={{ marginBottom: "var(--s-3)", fontWeight: 400, fontStyle: "italic" }}>
+          Your wardrobe is empty
+        </h3>
         <p style={{ maxWidth: 380, margin: "0 auto" }}>
-          Click <strong>+ Add item</strong> above to upload your first piece of clothing.
-          The AI will tag it automatically.
+          Click <strong>+ Add item</strong> above to upload your first piece. The AI will tag it automatically.
         </p>
       </div>
     );
@@ -40,8 +44,8 @@ export default function WardrobeGallery({ initialItems }: { initialItems: Wardro
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-        gap: "var(--s-4)",
+        gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+        gap: "var(--s-6)",
       }}
     >
       {initialItems.map((item) => (
@@ -69,17 +73,17 @@ export default function WardrobeGallery({ initialItems }: { initialItems: Wardro
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />
           </div>
-          <div style={{ padding: "var(--s-3) var(--s-4) var(--s-4)" }}>
+          <div style={{ padding: "var(--s-4) var(--s-4) var(--s-5)" }}>
             {item.category && (
               <span className={`pill pill-cat-${item.category}`}>{item.category}</span>
             )}
             {item.description && (
-              <p style={{ fontSize: "0.875rem", marginTop: "var(--s-2)", color: "var(--fg)" }}>
+              <p style={{ fontSize: "0.9375rem", marginTop: "var(--s-3)", color: "var(--fg)" }}>
                 {item.description}
               </p>
             )}
             {item.color && (
-              <p style={{ fontSize: "0.75rem", marginTop: "var(--s-1)", color: "var(--fg-subtle)" }}>
+              <p style={{ fontSize: "0.6875rem", marginTop: "var(--s-2)", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--fg-subtle)" }}>
                 {item.color}
                 {item.season ? ` · ${item.season}` : ""}
                 {item.style ? ` · ${item.style}` : ""}
@@ -91,16 +95,16 @@ export default function WardrobeGallery({ initialItems }: { initialItems: Wardro
             aria-label="Delete item"
             style={{
               position: "absolute",
-              top: 10,
-              right: 10,
-              width: 30,
-              height: 30,
-              borderRadius: "50%",
-              background: "rgba(255, 255, 255, 0.92)",
-              backdropFilter: "blur(8px)",
+              top: 8,
+              right: 8,
+              width: 28,
+              height: 28,
+              borderRadius: "2px",
+              background: "var(--bg-elevated)",
               border: "1px solid var(--border)",
               color: "var(--fg-muted)",
-              fontSize: 18,
+              fontSize: 16,
+              lineHeight: 1,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

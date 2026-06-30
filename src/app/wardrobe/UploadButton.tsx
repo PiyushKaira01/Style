@@ -101,10 +101,12 @@ export default function UploadButton() {
         }}
         onDragLeave={() => setDrag(false)}
         onDrop={onDrop}
-        className="btn btn-primary btn-lg"
+        className="btn btn-primary"
         style={{
-          background: drag ? "#2a2622" : undefined,
-          border: drag ? "2px dashed var(--fg)" : undefined,
+          background: drag ? "var(--bg)" : undefined,
+          color: drag ? "var(--fg)" : undefined,
+          border: drag ? "1px dashed var(--fg)" : undefined,
+          cursor: "pointer",
         }}
       >
         {uploading ? progress || "Working…" : "+ Add item"}

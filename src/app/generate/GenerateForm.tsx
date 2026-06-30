@@ -39,7 +39,7 @@ export default function GenerateForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card" style={{ display: "grid", gap: "var(--s-4)" }}>
+    <form onSubmit={handleSubmit} className="card" style={{ display: "grid", gap: "var(--s-5)" }}>
       <div className="field">
         <label className="field-label" htmlFor="prompt">Describe the outfit</label>
         <textarea
@@ -58,25 +58,13 @@ export default function GenerateForm() {
             type="button"
             key={p}
             onClick={() => setPrompt(p)}
+            className="btn-ghost"
             style={{
-              padding: "6px 12px",
-              fontSize: "0.8125rem",
-              background: "var(--bg-subtle)",
-              border: "1px solid transparent",
-              borderRadius: 999,
-              cursor: "pointer",
-              color: "var(--fg-muted)",
-              transition: "all 0.15s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "var(--bg-elevated)";
-              e.currentTarget.style.borderColor = "var(--border)";
-              e.currentTarget.style.color = "var(--fg)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "var(--bg-subtle)";
-              e.currentTarget.style.borderColor = "transparent";
-              e.currentTarget.style.color = "var(--fg-muted)";
+              fontSize: "0.75rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.14em",
+              padding: "6px 0",
+              marginRight: "var(--s-3)",
             }}
           >
             {p}
@@ -84,7 +72,7 @@ export default function GenerateForm() {
         ))}
       </div>
       <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>
-        {loading ? "Generating image…" : "Generate"}
+        {loading ? "Generating image…" : "Generate →"}
       </button>
       {error && <div className="alert alert-error">{error}</div>}
     </form>

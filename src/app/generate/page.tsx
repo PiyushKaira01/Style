@@ -21,9 +21,18 @@ export default async function GeneratePage() {
       <Nav loggedIn />
       <main className="main">
         <div className="container">
-          <header style={{ marginBottom: "var(--s-7)", textAlign: "center" }}>
-            <span className="pill" style={{ marginBottom: "var(--s-3)" }}>AI image generation</span>
-            <h1 style={{ marginTop: "var(--s-3)" }}>Outfit inspiration</h1>
+          <header
+            style={{
+              marginBottom: "var(--s-7)",
+              textAlign: "center",
+              paddingBottom: "var(--s-6)",
+              borderBottom: "1px solid var(--border)",
+            }}
+          >
+            <span className="label" style={{ display: "block", marginBottom: "var(--s-3)" }}>
+              N° 03 — AI image generation
+            </span>
+            <h1 style={{ fontStyle: "italic", fontWeight: 300 }}>Outfit inspiration</h1>
             <p style={{ marginTop: "var(--s-3)", fontSize: "1.0625rem", maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>
               Describe an outfit idea and I'll render it as a fashion image for you.
             </p>

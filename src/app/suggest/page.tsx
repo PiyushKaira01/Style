@@ -18,9 +18,18 @@ export default async function SuggestPage() {
       <Nav loggedIn />
       <main className="main">
         <div className="container-narrow">
-          <header style={{ marginBottom: "var(--s-7)", textAlign: "center" }}>
-            <span className="pill" style={{ marginBottom: "var(--s-3)" }}>Outfit suggestion</span>
-            <h1 style={{ marginTop: "var(--s-3)" }}>What should you wear?</h1>
+          <header
+            style={{
+              marginBottom: "var(--s-7)",
+              textAlign: "center",
+              paddingBottom: "var(--s-6)",
+              borderBottom: "1px solid var(--border)",
+            }}
+          >
+            <span className="label" style={{ display: "block", marginBottom: "var(--s-3)" }}>
+              N° 02 — Outfit suggestion
+            </span>
+            <h1 style={{ fontStyle: "italic", fontWeight: 300 }}>What should you wear?</h1>
             <p style={{ marginTop: "var(--s-3)", fontSize: "1.0625rem" }}>
               Tell me where you're going and what the weather's like.
             </p>

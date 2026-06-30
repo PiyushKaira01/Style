@@ -11,19 +11,21 @@ export default function Gallery({ initial }: { initial: GeneratedOutfit[] }) {
           display: "flex",
           alignItems: "baseline",
           justifyContent: "space-between",
-          marginBottom: "var(--s-5)",
+          paddingBottom: "var(--s-4)",
+          marginBottom: "var(--s-6)",
+          borderBottom: "1px solid var(--border)",
         }}
       >
-        <h2>Your generated looks</h2>
-        <span className="subtle" style={{ fontSize: "0.875rem" }}>
+        <h2 style={{ fontStyle: "italic", fontWeight: 300 }}>Your generated looks</h2>
+        <span className="label">
           {initial.length} {initial.length === 1 ? "image" : "images"}
         </span>
       </div>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-          gap: "var(--s-4)",
+          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gap: "var(--s-6)",
         }}
       >
         {initial.map((g) => (
@@ -41,8 +43,10 @@ export default function Gallery({ initial }: { initial: GeneratedOutfit[] }) {
             </div>
             <p
               style={{
-                padding: "var(--s-3) var(--s-4)",
-                fontSize: "0.875rem",
+                padding: "var(--s-4)",
+                fontSize: "0.75rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
                 color: "var(--fg-muted)",
                 margin: 0,
               }}

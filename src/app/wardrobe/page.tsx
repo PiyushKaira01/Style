@@ -30,15 +30,19 @@ export default async function WardrobePage() {
               flexWrap: "wrap",
               gap: "var(--s-4)",
               marginBottom: "var(--s-7)",
+              paddingBottom: "var(--s-6)",
+              borderBottom: "1px solid var(--border)",
             }}
           >
             <div>
-              <span className="pill" style={{ marginBottom: "var(--s-3)" }}>Your closet</span>
-              <h1 style={{ fontSize: "2.75rem", marginTop: "var(--s-3)" }}>Wardrobe</h1>
-              <p style={{ marginTop: "var(--s-2)", fontSize: "1rem" }}>
+              <span className="label" style={{ display: "block", marginBottom: "var(--s-3)" }}>
+                N° 01 — Your closet
+              </span>
+              <h1 style={{ fontStyle: "italic", fontWeight: 300 }}>Wardrobe</h1>
+              <p style={{ marginTop: "var(--s-2)", fontSize: "0.875rem" }}>
                 {count === 0
-                  ? "Start by adding your first item."
-                  : `${count} ${count === 1 ? "item" : "items"} and counting.`}
+                  ? "Begin by adding your first piece."
+                  : `${count} ${count === 1 ? "piece" : "pieces"} and counting.`}
               </p>
             </div>
             <UploadButton />
